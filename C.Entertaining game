@@ -1,0 +1,19 @@
+numbers = {2,3,5,7,8,11,12,13,17,18,19,20}
+
+f = open('input.txt','r')
+a = f.read()
+b = a.split(" ")
+f.close()
+N=int(b[0])
+m=int(b[1])
+if N % 2 == 1:
+    N=N-1
+N=N//2
+numbers = {number for number in numbers if number <=int(m)}
+P_ver= len(numbers)/ m
+znam= P_ver**2/(1-P_ver)2 # знаменатель геометр прогрессии
+z_2=P_ver**2 * (1-P_ver)(N-2)   # первый элемент геометр прогрессии
+
+chisl = P_ver**2*(1-P_ver)**(N-2) * (znam**N-1) / (znam-1)
+znamenat = m**N 
+print(int(chisl*znamenat)%1000000007)
